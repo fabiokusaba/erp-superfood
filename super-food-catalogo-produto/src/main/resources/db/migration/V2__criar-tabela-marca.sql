@@ -1,0 +1,5 @@
+CREATE TABLE marca(
+    id VARCHAR(40) PRIMARY KEY NOT NULL,
+    nome VARCHAR(80) NOT NULL,
+    descricao VARCHAR(80) NOT NULL
+);
