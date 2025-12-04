@@ -1,5 +1,8 @@
 server:
   port: 8090
+  servlet:
+    context-path: /super-food-catalogo-produto
+    
 spring:
   application:
     name: super-food-catalogo-produto
@@ -24,3 +27,9 @@ spring:
     user: sa
     password: SuperFood#!
     locations: classpath:db/migration
+
+springdoc:
+  swagger-ui:
+    path: /documentacao
+  api-docs:
+    path: /docs
