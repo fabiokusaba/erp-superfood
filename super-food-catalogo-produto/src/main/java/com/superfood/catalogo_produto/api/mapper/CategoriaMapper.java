@@ -1,5 +1,7 @@
 package com.superfood.catalogo_produto.api.mapper;
 
+import com.superfood.catalogo_produto.api.dtos.AtualizarCategoriaRequest;
+import com.superfood.catalogo_produto.api.dtos.AtualizarCategoriaResponse;
 import com.superfood.catalogo_produto.api.dtos.CadastrarCategoriaRequest;
 import com.superfood.catalogo_produto.api.dtos.CadastrarCategoriaResponse;
 import com.superfood.catalogo_produto.domain.model.Categoria;
@@ -21,7 +23,15 @@ public class CategoriaMapper {
         return categoria;
     }
 
-    public CadastrarCategoriaResponse toResponse(Categoria categoria) {
+    public CadastrarCategoriaResponse cadastroResponse(Categoria categoria) {
         return modelMapper.map(categoria, CadastrarCategoriaResponse.class);
+    }
+
+    public AtualizarCategoriaResponse atualizarResponse(Categoria categoria) {
+        return modelMapper.map(categoria, AtualizarCategoriaResponse.class);
+    }
+
+    public void copyToDomainModel(AtualizarCategoriaRequest request, Categoria categoria) {
+        modelMapper.map(request, categoria);
     }
 }
